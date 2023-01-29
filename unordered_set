@@ -1,0 +1,37 @@
+#include<iostream>
+#include<unordered_set>
+using namespace std;
+
+
+int main() {
+
+	unordered_set<string>us{ {"sun", "mon", "tue", "thur", "fri", "sat"} };//مبيرتبش و مبيكررش
+	int c = us.bucket_count();
+	for (auto s : us)
+	{
+		cout << s << "is in bucket " << us.bucket(s) << endl;
+		
+	}
+
+	for (size_t i = 0; i < c; i++)
+	{
+		cout << "bucket " << i << "has: " << us.bucket_size(i)<<endl;
+	}
+
+	us.size();//7
+	us.bucket_count();//8
+	us.load_factor();//=us.size()/us.bucket_count
+
+	unordered_set<string>::hasher fn;
+	fn = us.hash_function();
+	cout << fn("aaa");//الرقم الي علي اساسه هيتحط فين
+	
+	us.rehash(100);//بيخلي الرقم يتوزع علي ارقام اكتر
+
+
+}
+
+
+
+
+//add - delete - search : O(1) 
