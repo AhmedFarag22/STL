@@ -1,0 +1,35 @@
+#include<iostream>
+#include<map>
+#include<algorithm>
+using namespace std;
+
+
+int main() {
+	int arr[100];
+	int frq[100] = {0};
+
+	int n = sizeof(arr) / sizeof(arr[0]);
+	cin >> n;
+	for (size_t i = 0; i <= n; i++)
+	{
+		cin >> arr[i];
+		int x = arr[i];
+		frq[x]++;
+	}
+
+	sort(arr, arr + n);
+	for (size_t i = 0; i <= n; i++)
+	{
+		cout << arr[i] << "=> " << frq[arr[i]] << endl;
+	}
+
+	map<int, string, greater<>>mp;//from greater
+	mp[1] = "one";
+	mp[2] = "two";
+	mp[3] = "three";
+
+	for (auto m : mp)
+	{
+		cout << m.first << " - " << m.second << endl;
+	}
+}
