@@ -1,0 +1,32 @@
+#include<iostream>
+#include<stack>
+#include<list>
+#include<queue>
+using namespace std;
+
+
+int main() {
+	stack<string>s;
+	stack<string>c;
+	s.push("a");
+	s.emplace("b");
+	s.push("g");
+	for (size_t i = 0; s.empty(); i++)
+	{
+		cout << s.top();
+		s.pop();
+	}
+	stack<string, deque<string>>v;
+	v.push("h");
+	for (string ss : {"hg","jk", "uy"})
+	c.push(ss);
+
+	s.swap(s);
+
+
+
+
+}
+
+//push - pop - size : O(1)
+
