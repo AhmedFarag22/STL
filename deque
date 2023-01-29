@@ -1,0 +1,34 @@
+#include<iostream>
+#include<deque>
+
+using namespace std;
+
+
+int main() {
+	deque<char>d = { 'r', 'o', 'g', 'r' };
+	d.push_back('r');
+	d.push_front('p');
+	cout << d.front();
+	d.pop_front();
+	d.pop_back();
+	d.erase(d.begin() + 1, d.end() - 1);
+	d.insert(d.begin(), 'p');
+	d.emplace(d.begin(), 'p');
+	d.resize(3);
+	d.shrink_to_fit();
+	auto it = d.begin();
+	for (; it != d.end(); it++)
+	{
+		cout << *it;
+	}
+	for (size_t i = 0; i < d.size(); i++)
+	{
+		cout << d[i];
+	}
+}
+
+
+
+//fast insert/remove at the beginning and the end : O(1)
+//slow insert/remove in the middle O(n)
+//slow search O(n)
