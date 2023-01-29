@@ -1,0 +1,89 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+bool GreaterThanThree(int i)
+{
+	return i > 3;
+
+}
+
+int main() {
+
+	vector<int>v(5);
+	int n;
+
+	for (size_t i = 0; i < v.size(); i++)
+	{
+		cin >> v[i];
+		if (i == v.size() - 1){
+			cout << "if you want to resize press the size else press -1 ";
+			cin >> n;
+			if (n == -1)
+				break;
+			else
+				v.resize(n);
+		}
+		
+
+	}
+
+	for (size_t i = 0; i < v.size(); i++)
+	{
+		cout << v[i] << endl;
+	}
+
+
+	sort(v.begin(), v.end());
+	sort(v.rbegin(), v.rend());//للادخال
+	reverse(v.begin(), v.end());
+	cout<<*min_element(v.begin(), v.end());
+	cout << *max_element(v.begin(), v.end());
+	auto pair = minmax_element(v.begin(), v.end());
+	cout << *pair.first << endl;//min;
+	cout << *pair.second << endl;//max;
+	auto it = find_if(v.begin(), v.end(), GreaterThanThree);
+	for (; it != v.end(); it++)
+		cout << *it << endl;
+
+	int arr[] = { 10, 20,  30,  40,  50,  50, 70 };
+	vector<int> v2(7);
+
+	copy(arr, arr + 7, v2.begin());
+
+	for (auto c : v2)
+		cout << c << " ";
+
+
+	vector<int> f_vec = { 1,2,3,4,5,6,7,8,9 };
+	vector<int> t_vec(15);
+
+	copy_backward(f_vec.begin(), f_vec.end(), t_vec.end());
+
+
+	int arr[] = { 1,3,4,5 };
+	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));//for print
+	copy(arr, arr+4, ostream_iterator<int>(cout, " "));// for print
+	copy(istream_iterator<int>(cin), istream_iterator<int>(), back_inserter(v));//للادخال
+
+	copy(istream_iterator<int>(cin), istream_iterator<int>(), ostream_iterator<int>(cout, "\ninput : "));//
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
