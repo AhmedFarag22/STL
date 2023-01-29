@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<vector>
+#include<utility>
+using namespace std;
+
+
+int main() {
+
+
+	
+	pair<int, string>p(123, "ahmed");
+	pair<int, string>p = make_pair(123, "ahmed");
+	cout << p.first << " " << p.second << endl;
+	pair<string, pair<int, double>>nas;
+	nas.first = "ahmed";
+	nas.second.first = 18;
+	nas.second.second = 650;
+	vector<pair<int, string>>vp;
+	vp.push_back(make_pair(1234, "ahmed"));
+	 vp.push_back(pair<int, string>(1234, "ahmed"));
+}
+
