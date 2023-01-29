@@ -1,0 +1,49 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+	vector<int> v = { 10, 20, 30, 40 };
+
+	vector<int>::iterator it = v.end() - 1;
+	cout << *it<<endl;
+
+	for (vector<int>::iterator ic = v.begin(); ic != v.end(); ic++)
+	{
+		cout << *ic << "  ";
+	}
+	cout << endl;
+	for (vector<int>::const_iterator ic = v.cbegin(); ic != v.cend(); ic++)
+	{
+		cout << *ic << "  ";
+	}
+	cout << endl;
+	for (vector<int>::reverse_iterator ic = v.rbegin(); ic != v.rend(); ic++)
+	{
+		cout << *ic << "  ";
+	}
+	cout << endl;
+	for (vector<int>::iterator ic = v.begin(); ic != v.end(); ic++)
+	{
+		cout << *ic <<"  ";
+	}
+	cout << endl;
+	for (auto x = v.begin(); x != v.end(); x++)
+	{
+		cout << *x << "  ";
+	}
+	
+	v.insert(v.begin() + 1, 12);
+	v.insert(v.end() - 1, 72);
+	v.emplace(v.begin() + 2, 13);
+	v.emplace(v.end() - 2, 62);
+	v.erase(v.begin() + 1);
+
+
+	v.resize(5);
+	cout << "size is  =  " << v.size();
+	v.shrink_to_fit();
+
+
+
+}
