@@ -1,0 +1,19 @@
+#include<iostream>
+#include<forward_list>
+using namespace std;
+int main() {
+	forward_list<double>f1{ 1,2,3 };
+	forward_list<double>f2 {4,3,3 };
+	f1.insert_after(f1.before_begin(), 5);
+	auto f = next(f1.begin(), 3);// move 3 steps after begin
+	f1.erase_after(f1.begin());
+	f1.remove_if([](double n) {return n <= 2; });
+	f1.splice_after(f1.before_begin(), f2);
+	f1.push_front(4);
+
+	
+}
+
+
+
+
