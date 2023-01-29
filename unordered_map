@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+#include<unordered_map>
+using namespace std;
+
+int main() {
+	unordered_map<string, int>um{ {"kia", 2019}, {"honda", 2020} };
+	cout << um["kia"];
+	cout << um.at("kia");
+	um.insert({ "mercedes", 2019 });
+	cout << um.begin()->first;
+	cout << um.max_load_factor();//=size/bucket
+	um.rehash(9);
+	auto search = um.find("hyundai");
+	if (search != um.end())
+		cout << "found";
+	else
+		cout << "not found";
+
+}
+
+
+//fast search - insert - at any place O(1)
