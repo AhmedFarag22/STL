@@ -1,0 +1,43 @@
+#include<iostream>
+#include<algorithm>
+#include<list>
+using namespace std;
+bool evenNumber(int i)
+{
+	return i % 2;
+}
+int main() {
+	list<int>l = { 1,2,2,3,4,5 };
+	l.push_back(3);
+	l.push_front(7);
+	l.insert(l.begin(), 2, 7);//push 7 twice
+	l.assign(10, 2);//2 ten times
+	l.insert(l.begin(), 9);
+	auto it = l.begin();
+	it++;
+	list<int>::iterator it = l.begin();
+	l.remove(2);
+	l.erase(it, l.end());
+	for (auto li : l) {
+		cout << li << " ";
+	}
+
+
+	list<int>l1 = { 1,2,3 };
+	list<int>l2 = { 0,4,5 };
+	l1.merge(l2);//يجمع
+	l1.splice(l1.begin(), l2);//بيجمع بدون ترتيب
+	l1.remove_if(evenNumber);
+	l1.sort(greater<int>());//من الاكبر
+	l1.sort();//من الاصغر
+	list<int>::iterator i = l.begin();
+	i++;
+	*i = 2;
+
+}
+	//fast insert - remove  from any where : O(1)
+	//slow search : O(n)
+
+
+
+
