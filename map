@@ -1,0 +1,27 @@
+#include<iostream>
+#include<map>
+#include<string>
+using namespace std;
+
+
+int main() {
+	
+	map<int, string>m{ {1232,"asd"}, {1232,"fdgf"},{65734,"sfsc"} };
+	m.insert({ 78, "ds"});
+	m.emplace(5, "j");
+	m.erase(1232);
+	m.equal_range(1232);//يعني هيجيب العنصر ده و الي بعده
+	m.emplace_hint(m.begin(), 78, "h,");
+	for (auto mm : m)
+		cout << mm.first << "  " << mm.second << endl;
+
+	multimap<string, string>mp;
+	mp.insert({"ahmed", "cs"});
+	mp.insert({"ahmed", "se"});
+	mp.insert({"belal", "csj"});
+	
+}
+
+//fast insertion and removal O(log n)
+//hint O(1)
+//fast search O(log N)
